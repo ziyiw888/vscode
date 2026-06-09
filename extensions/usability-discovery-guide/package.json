@@ -1,0 +1,65 @@
+{
+  "name": "usability-discovery-guide",
+  "displayName": "Usability Discovery Guide",
+  "description": "A lightweight feature discovery guide that helps beginner VS Code users find common tools such as the Command Palette, Settings, Extensions, and Terminal.",
+  "version": "0.0.1",
+  "publisher": "info443",
+  "engines": {
+    "vscode": "^1.90.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:usabilityDiscoveryGuide.openGuide"
+  ],
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "usabilityDiscoveryGuide.openGuide",
+        "title": "Open Beginner Feature Discovery Guide",
+        "category": "Discovery Guide"
+      }
+    ],
+    "configuration": {
+      "title": "Usability Discovery Guide",
+      "properties": {
+        "usabilityDiscoveryGuide.showBeginnerTips": {
+          "type": "boolean",
+          "default": true,
+          "description": "Show beginner-oriented tips in the feature discovery guide."
+        }
+      }
+    },
+    "walkthroughs": [
+      {
+        "id": "usabilityDiscoveryGuide.walkthrough",
+        "title": "Discover VS Code Features",
+        "description": "Learn how to find common VS Code features through the Command Palette, Settings UI, Extensions view, and integrated Terminal.",
+        "steps": [
+          {
+            "id": "openCommandPalette",
+            "title": "Use the Command Palette",
+            "description": "Open the Command Palette with Cmd+Shift+P on macOS or Ctrl+Shift+P on Windows/Linux. The Command Palette helps users discover actions without memorizing menu locations."
+          },
+          {
+            "id": "openSettings",
+            "title": "Find Settings",
+            "description": "Use the Settings UI to search for editor configuration options. This improves discoverability compared with editing JSON settings manually."
+          },
+          {
+            "id": "openExtensions",
+            "title": "Explore Extensions",
+            "description": "Use the Extensions view to add language support, themes, debuggers, and other workflow features without modifying the core editor."
+          },
+          {
+            "id": "openTerminal",
+            "title": "Use the Integrated Terminal",
+            "description": "Open the integrated terminal to run commands without leaving VS Code."
+          }
+        ]
+      }
+    ]
+  }
+}
